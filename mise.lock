@@ -1,0 +1,8 @@
+[[tools.ruby]]
+version = "3.3.7"
+backend = "core:ruby"
+"platforms.linux-arm64" = { checksum = "sha256:10cf4670fbbf07a3a865da6afefe2a96d7039f665e3d3149fa602b245f78c021", url = "https://github.com/jdx/ruby/releases/download/3.3.7/ruby-3.3.7.arm64_linux.tar.gz"}
+"platforms.linux-x64" = { checksum = "sha256:f8322097295b09cc5f26b0c44eff82ecb94af8415735216ba3362a5f7d5e3e03", url = "https://github.com/jdx/ruby/releases/download/3.3.7/ruby-3.3.7.x86_64_linux.tar.gz"}
+"platforms.macos-arm64" = { checksum = "sha256:20620b53d419c950ea44f1e0971b6e19194e0c72fd4f7954a38f2c70e5af41d0", url = "https://github.com/jdx/ruby/releases/download/3.3.7/ruby-3.3.7.macos.tar.gz"}
+"platforms.macos-x64" = { checksum = "sha256:9c37c3b12288c7aec20ca121ce76845be5bb5d77662a24919651aaf1d12c8628", url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.7.tar.gz"}
+"platforms.windows-x64" = { checksum = "sha256:9c37c3b12288c7aec20ca121ce76845be5bb5d77662a24919651aaf1d12c8628", url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.7.tar.gz"}

@@ -1,0 +1,10 @@
+min_version = '2026.2.20'
+
+[settings]
+experimental = true
+lockfile = true
+ruby.compile = false
+
+[tools]
+# Ruby ecosystem for iOS/mobile development
+ruby = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}"
