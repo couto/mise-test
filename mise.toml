@@ -18,9 +18,18 @@ node = "{{ env['NODE_VERSION'] | default(value='22.13.1') }}"
 pnpm = "{{ env['PNPM_VERSION'] | default(value='10.24.0') }}"
 
 # Mobile dev ecosystem
-ruby = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}"
-bundler = "{{ env['BUNDLER_VERSION'] | default(value='2.5.7') }}"
-cocoapods = "{{ env['COCOAPODS_VERSION'] | default(value='1.14.3') }}"
+ruby = { version = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}", os = [
+  "linux",
+  "macos",
+] }
+bundler = { version = "{{ env['BUNDLER_VERSION'] | default(value='2.5.7') }}", os = [
+  "linux",
+  "macos",
+] }
+cocoapods = { version = "{{ env['COCOAPODS_VERSION'] | default(value='1.14.3') }}", os = [
+  "linux",
+  "macos",
+] }
 
 # Fix activesupport version to resolve cocoapods compatibility
-"gem:activesupport" = "7.0.8.4"
+"gem:activesupport" = { version = "7.0.8.4", os = ["linux", "macos"] }
