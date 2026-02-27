@@ -38,9 +38,5 @@ backend = "core:ruby"
 "platforms.windows-x64" = { url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.3.7-1/rubyinstaller-3.3.7-1-x64.7z"}
 
 [[tools.xcode]]
-version = "26.3.0"
-backend = "asdf:qasim/mise-xcode"
-
-[[tools.xcode]]
 version = "26.2.0"
 backend = "asdf:qasim/mise-xcode"
