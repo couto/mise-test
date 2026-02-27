@@ -28,7 +28,7 @@ os = ["linux", "macos"]
 
 # Only works on macos
 [tools.xcode]
-version = "{{ env['XCODE_VERSION'] | default(value='26.3') }}"
+version = "{{ env['XCODE_VERSION'] | default(value='26.2') }}"
 os = ["macos"]
 
 [tools]
