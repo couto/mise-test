@@ -3,7 +3,7 @@ min_version = '2026.2.22'
 [settings]
 experimental = true
 lockfile = true
-locked = false
+locked = true
 
 # Download the pre-compiled binbaries
 ruby.compile = false
