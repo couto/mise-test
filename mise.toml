@@ -1,4 +1,4 @@
-min_version = '2026.2.22'
+min_version = '2026.2.21'
 
 [settings]
 experimental = true
