@@ -1,10 +1,26 @@
-min_version = '2026.2.20'
+min_version = '2026.2.22'
 
 [settings]
 experimental = true
 lockfile = true
+locked = true
+
+# Download the pre-compiled binbaries
 ruby.compile = false
 
+[plugins]
+bundler = "jonathanmorley/asdf-bundler"
+cocoapods = "mise-plugins/mise-cocoapods"
+
 [tools]
-# Ruby ecosystem for iOS/mobile development
+# Node.js ecosystem - versions from .prototools
+node = "{{ env['NODE_VERSION'] | default(value='22.13.1') }}"
+pnpm = "{{ env['PNPM_VERSION'] | default(value='10.24.0') }}"
+
+# Mobile dev ecosystem
 ruby = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}"
+bundler = "{{ env['BUNDLER_VERSION'] | default(value='2.5.7') }}"
+cocoapods = "{{ env['COCOAPODS_VERSION'] | default(value='1.14.3') }}"
+
+# Fix activesupport version to resolve cocoapods compatibility
+"gem:activesupport" = "7.0.8.4"
