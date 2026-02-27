@@ -3,7 +3,6 @@ min_version = '2026.2.22'
 [settings]
 experimental = true
 lockfile = true
-locked = false
 
 # Download the pre-compiled binbaries
 ruby.compile = false
@@ -11,25 +10,31 @@ ruby.compile = false
 [plugins]
 bundler = "jonathanmorley/asdf-bundler"
 cocoapods = "mise-plugins/mise-cocoapods"
+xcode = "qasim/mise-xcode"
+
+# Mobile dev ecosystem, this is only done on macos and linux. 
+# We can ignore these tools on Windows 
+[tools.ruby]
+version = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}"
+os = ["linux", "macos"]
+
+[tools.bundler]
+version = "{{ env['BUNDLER_VERSION'] | default(value='2.5.7') }}"
+os = ["linux", "macos"]
+
+[tools.cocoapods]
+version = "{{ env['COCOAPODS_VERSION'] | default(value='1.14.3') }}"
+os = ["linux", "macos"]
+
+# Only works on macos
+[tools.xcode]
+version = "{{ env['XCODE_VERSION'] | default(value='26.3') }}"
+os = ["macos"]
 
 [tools]
 # Node.js ecosystem - versions from .prototools
 node = "{{ env['NODE_VERSION'] | default(value='22.13.1') }}"
 pnpm = "{{ env['PNPM_VERSION'] | default(value='10.24.0') }}"
-
-# Mobile dev ecosystem
-ruby = { version = "{{ env['RUBY_VERSION'] | default(value='3.3.7') }}", os = [
-  "linux",
-  "macos",
-] }
-bundler = { version = "{{ env['BUNDLER_VERSION'] | default(value='2.5.7') }}", os = [
-  "linux",
-  "macos",
-] }
-cocoapods = { version = "{{ env['COCOAPODS_VERSION'] | default(value='1.14.3') }}", os = [
-  "linux",
-  "macos",
-] }
 
 # Fix activesupport version to resolve cocoapods compatibility
 "gem:activesupport" = { version = "7.0.8.4", os = ["linux", "macos"] }
