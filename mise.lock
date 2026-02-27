@@ -40,3 +40,7 @@ backend = "core:ruby"
 [[tools.xcode]]
 version = "26.3.0"
 backend = "asdf:qasim/mise-xcode"
+
+[[tools.xcode]]
+version = "26.2.0"
+backend = "asdf:qasim/mise-xcode"
