@@ -10,6 +10,10 @@ backend = "asdf:mise-plugins/mise-cocoapods"
 version = "7.0.8.4"
 backend = "gem:activesupport"
 
+[[tools.java]]
+version = "zulu-17.64.17.0"
+backend = "core:java"
+
 [[tools.node]]
 version = "22.13.1"
 backend = "core:node"
@@ -36,7 +40,3 @@ backend = "core:ruby"
 "platforms.macos-arm64" = { checksum = "sha256:20620b53d419c950ea44f1e0971b6e19194e0c72fd4f7954a38f2c70e5af41d0", url = "https://github.com/jdx/ruby/releases/download/3.3.7/ruby-3.3.7.macos.tar.gz"}
 "platforms.macos-x64" = { checksum = "sha256:9c37c3b12288c7aec20ca121ce76845be5bb5d77662a24919651aaf1d12c8628", url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.7.tar.gz"}
 "platforms.windows-x64" = { url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.3.7-1/rubyinstaller-3.3.7-1-x64.7z"}
-
-[[tools.xcode]]
-version = "26.2.0"
-backend = "asdf:qasim/mise-xcode"
