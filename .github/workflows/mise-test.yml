@@ -21,3 +21,13 @@ jobs:
         with:
           install: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create random file and commit
+        shell: bash
+        run: |
+          FILE="random-$(head /dev/urandom | tr -dc a-z0-9 | head -c 8).txt"
+          echo "$(head /dev/urandom | tr -dc a-zA-Z0-9 | head -c 64)" > "$FILE"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$FILE"
+          git commit -m "chore: add random file $FILE"
