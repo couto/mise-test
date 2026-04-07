@@ -76,6 +76,10 @@ url = "https://github.com/jdx/hk/releases/download/v1.41.0/hk-x86_64-pc-windows-
 version = "zulu-17.64.17.0"
 backend = "core:java"
 
+[tools.java."platforms.macos-arm64"]
+checksum = "sha256:122446b8ad36f1dc80677272dbdad71fd5ca8d76df774c01e7839c7bf4d267d6"
+url = "https://cdn.azul.com/zulu/bin/zulu17.64.17-ca-jdk17.0.18-macosx_aarch64.tar.gz"
+
 [[tools.node]]
 version = "22.13.1"
 backend = "core:node"
