@@ -32,4 +32,4 @@ gitleaks = "8.30.1"
 
 [hooks]
 # Automatically install/update hooks when tools are installed
-postinstall = "hk install --mise"
+postinstall = "node -e \"process.env.CI || require('child_process').execSync('hk install --mise', {stdio: 'inherit'})\""
