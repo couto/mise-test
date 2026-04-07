@@ -25,9 +25,11 @@ jobs:
       - name: Create random file and commit
         shell: bash
         run: |
-          FILE="random-$(head /dev/urandom | tr -dc a-z0-9 | head -c 8).txt"
-          echo "$(head /dev/urandom | tr -dc a-zA-Z0-9 | head -c 64)" > "$FILE"
+          FILE="random-$(LC_ALL=C tr -dc a-z0-9 < /dev/urandom | head -c 8).txt"
+          echo "$(LC_ALL=C tr -dc a-zA-Z0-9 < /dev/urandom | head -c 64)" > "$FILE"
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add "$FILE"
           git commit -m "chore: add random file $FILE"
