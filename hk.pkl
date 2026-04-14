@@ -14,11 +14,19 @@ local linters = new Mapping<String, Step> {
     }
 }
 
+local conventions = new Mapping<String, Step> {
+    ["conventional-commits"] = Builtins.check_conventional_commit
+}
+
 hooks {
     ["pre-commit"] {
         fix = true
         stash = "git"
         steps = linters
+    }
+    ["commit-msg"] {
+        fix = true
+        steps = conventions
     }
     ["fix"] {
         fix = true
