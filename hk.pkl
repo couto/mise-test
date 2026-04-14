@@ -6,6 +6,7 @@ local linters = new Mapping<String, Step> {
     // ["prettier"] = Builtins.prettier
     // ["eslint"] = Builtins.eslint
     // ["ruff"] = Builtins.ruff
+    ["zizmor"] = Builtins.zizmor
 
     // Or define custom steps:
     ["gitleaks"] {
