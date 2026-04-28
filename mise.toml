@@ -3,7 +3,10 @@ min_version = '2026.4.6'
 [settings]
 experimental = true
 lockfile = true
-# locked = true
+locked = false
+
+[deps.npm]
+auto = true # Auto-run before mise x/run
 
 [tools]
 node = '22.13.1'
@@ -11,6 +14,7 @@ pnpm = '10.24.0'
 hk = "1.41.0"
 pkl = "0.31.1"
 gitleaks = "8.30.1"
+aube = "latest"
 
 [hooks]
 # Automatically install/update hooks when tools are installed, 
@@ -18,3 +22,15 @@ gitleaks = "8.30.1"
 postinstall = "{% if env.CI is not defined %} hk install --mise {% endif %}"
 
 [env]
+_.path = ['{{config_root}}/node_modules/.bin']
+
+[tasks.aube-install]
+description = 'Installs dependencies with aube'
+run = 'aube install'
+sources = ['package.json', 'aube-lock.yaml', 'mise.toml']
+outputs = ['node_modules/.aube-state/lockfile']
+
+[tasks.test]
+run = "vitest"
+depends = ["aube-install"]
+deny_net = true
