@@ -1,1 +1,3 @@
 jailBuilds: true
+allowBuilds:
+  vitest: true
