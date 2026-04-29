@@ -26,7 +26,7 @@ _.path = ['{{config_root}}/node_modules/.bin']
 
 [tasks.aube-install]
 description = 'Installs dependencies with aube'
-run = 'aube install'
+run = 'aube ci'
 sources = ['package.json', 'aube-lock.yaml', 'mise.toml']
 outputs = ['node_modules/.aube-state/lockfile']
 
