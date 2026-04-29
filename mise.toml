@@ -33,4 +33,3 @@ outputs = ['node_modules/.aube-state/lockfile']
 [tasks.test]
 run = "vitest"
 depends = ["aube-install"]
-deny_net = true
